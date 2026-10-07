@@ -1,7 +1,7 @@
 // import "@core/db";
 // import "@core/Encryption";
 // import "@core/Sync";
-// import "@helpers/Api";
+import "@helpers/Api";
 // import "@helpers/Utils";
 // import "@helpers/Validation";
 // import "@vendors/index";

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Modules\v1\Auth\Controllers;
 
 use App\Http\Controllers\Controller;
-// use App\Modules\v1\Auth\Services\AuthService;
-// use App\Helpers\ValidationHelper;
-// use App\Traits\ApiResponser;
+use App\Modules\v1\Auth\Services\AuthService;
+use App\Helpers\ValidationHelper;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;

@@ -1,6 +1,7 @@
 @import 'base/root.css';
 @import 'components/button.css';
 @import 'components/form.css';
+@import 'components/loader.css';
 @import 'pages/auth.css';
 
 * {

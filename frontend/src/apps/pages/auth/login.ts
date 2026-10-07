@@ -7,7 +7,7 @@ export default {
 		form?.addEventListener("submit", async (e) => {
 			e.preventDefault();
 
-			// Router.showLoader();
+			Router.showLoader();
 
 			try {
 				const inputFields = form.querySelectorAll<HTMLElement>('input');
@@ -29,7 +29,7 @@ export default {
 			} catch (err) {
 				this.showFormError('An error occurred. Please try again.');
 			} finally {
-				// Router.hideLoader();
+				Router.hideLoader();
 			}
 		});
 
@@ -74,13 +74,13 @@ export default {
 			window.location.href = targetRoute;
 		}
 
-		const { status, pesan, errors } = result.response;
-		if (pesan === 'Validasi gagal') {
+		const { status, message, errors } = result.response;
+		if (message === 'Validation failed') {
 			this.renderFieldErrors(errors);
 		} else if (status == 'failed') {
-			this.showFormError(pesan ?? 'Login failed.');
+			this.showFormError(message ?? 'Login failed.');
 		} else {
-			this.showFormError(pesan ?? 'Login failed.');
+			this.showFormError(message ?? 'Login failed.');
 		}
 		return true;
 	},
@@ -120,26 +120,26 @@ export default {
 			el.remove();
 		});
 
-	Object.keys(errors).forEach(fieldName => {
-		const input =
-			document.querySelector(`[name="${fieldName}"]`) ||
-			document.getElementById(`input_${fieldName}`);
+		Object.keys(errors).forEach(fieldName => {
+			const input =
+				document.querySelector(`[name="${fieldName}"]`) ||
+				document.getElementById(`input_${fieldName}`);
 
-		if (!input) return;
+			if (!input) return;
 
-		input.classList.add('is-invalid');
+			input.classList.add('is-invalid');
 
-		const feedback = document.createElement('div');
-		feedback.className = 'invalid-feedback fw-semibold d-block';
-		feedback.textContent = errors[fieldName];
+			const feedback = document.createElement('div');
+			feedback.className = 'invalid-feedback fw-semibold d-block';
+			feedback.textContent = errors[fieldName];
 
-		const wrapper = input.closest('.input-wrapper');
+			const wrapper = input.closest('.input-wrapper');
 
-		if (wrapper) {
-			wrapper.after(feedback);
-		} else {
-			input.after(feedback);
-		}
-	});
-}
+			if (wrapper) {
+				wrapper.after(feedback);
+			} else {
+				input.after(feedback);
+			}
+		});
+	}
 };
