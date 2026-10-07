@@ -82,7 +82,7 @@ class AuthController extends Controller {
 			$responseData['token'] = $user->createToken('x_token')->plainTextToken;
 		}
 
-		return $this->sukses($responseData, 'Login successful', 200, false);
+		return $this->sukses($responseData, 'Login successful', 200);
 	}
 
 	public function logout(Request $request) {
@@ -98,6 +98,6 @@ class AuthController extends Controller {
 			}
 		}
 
-		return $this->sukses('', 'Logout Web berhasil', 200, false);
+		return $this->sukses('', 'Web logout successful.', 200);
 	}
 }

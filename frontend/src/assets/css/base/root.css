@@ -25,6 +25,8 @@
 
 	--bg-white: #FFFFFF;
 	--bg-white-rgb: 255, 255, 255;
+
+	--panel-right-bg: color-mix(in srgb, hsl(var(--body-bg)) 82%, var(--bs-lime) 18%);
 }
 
 :root,
@@ -187,5 +189,13 @@
 }
 
 [data-bs-theme="dark"] {
+	--body-bg: #0b1120;
+	--body-bg-rgb: 11, 17, 32;
+	--body-color: #f8fafc;
+	--body-color-rgb: 248, 250, 252;
+
+	--bs-accent: #0d3027;
+	--bs-accent-rgb: 13, 48, 39;
+	--bs-accent-hover: #164638;
 
 }
